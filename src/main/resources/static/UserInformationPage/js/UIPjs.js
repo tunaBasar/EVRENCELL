@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Fetch package details
+   
     fetch(`http://35.242.205.201/v1/api/packages/getUserPackageByMsisdn?msisdn=${msisdn}`)
         .then(response => response.json())
         .then(packageData => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const totalSms = packageData.amountSms;
             console.log(packageData)
 
-            // Fetch remaining balance
+            
             fetch(`http://35.242.205.201/v1/api/balance/remainingBalance?msisdn=${msisdn}`)
                 .then(response => response.json())
                 .then(balanceData => {
@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const remainingSms = balanceData.balanceSms;
                     console.log(balanceData)
 
-                    // Calculate percentages
+                    
                     const dataPercentage = ((remainingData / totalData) * 100).toFixed(1);
                     const minutesPercentage = ((remainingMinutes / totalMinutes) * 100).toFixed(1);
                     const smsPercentage = ((remainingSms / totalSms) * 100).toFixed(1);
 
-                    // Update circles with the calculated percentages
+                    
                     updateCircle('#circle1', dataPercentage);
                     updateCircle('#circle2', minutesPercentage);
                     updateCircle('#circle3', smsPercentage);

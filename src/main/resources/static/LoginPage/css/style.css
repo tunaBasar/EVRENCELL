@@ -6,7 +6,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
-    background-image: url(logo.gif);
+    background-image: url(/src/main/resources/static/images/logo.gif);
 }
 
 div.container {
@@ -15,7 +15,7 @@ div.container {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 65px;
-    background-image: url(logo.gif);
+    background-image: url(/src/main/resources/static/images/logo.gif);
    
 }
 

@@ -3,7 +3,7 @@ body {
     justify-content: center;
     display: flex;
     text-align: center;
-    background-image: url(logo.gif);
+    background-image: url(/src/main/resources/static/images/logo.gif);
 }
 .maindiv{
     width: 600px;

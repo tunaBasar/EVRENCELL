@@ -17,7 +17,7 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", async f
 
         if (response.ok) {
             alert("Şifre sıfırlama başarılı. Lütfen mail kutunuzu kontrol ediniz.");
-            window.location.href = 'index.html'; 
+            window.location.href = '/src/main/resources/static/LoginPage/index.html'; 
         } else {
             alert(result.message || "Böyle bir mail veya National ID bulunamadı.");
         }

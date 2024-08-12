@@ -2,7 +2,7 @@ document.getElementById('submitButton').addEventListener('click', function () {
     const msisdn = document.getElementById('phone').value;
     const password = document.getElementById('password').value;
 
-    // Burada msisdn'nin doğru değeri aldığını kontrol edin
+    
     console.log("MSISDN:", msisdn);
 
     fetch('http://35.242.205.201/v1/api/auth/login', {
@@ -20,7 +20,7 @@ document.getElementById('submitButton').addEventListener('click', function () {
         if (data.statusCodeValue == 200) {
             localStorage.removeItem('msisdn');
             localStorage.setItem('msisdn', msisdn);
-            window.location.href = `UserInformationPage.html`;
+            window.location.href = `/src/main/resources/static/UserInformationPage/UserInformationPage.html`;
         } else {
             console.log(data)
             alert('Login failed: ' + data.message);
@@ -28,6 +28,6 @@ document.getElementById('submitButton').addEventListener('click', function () {
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert('An error occurred. Please try again.');
+        alert('Bir hata oluştu. Lütfen tekrar deneyiniz.');
     });
 });

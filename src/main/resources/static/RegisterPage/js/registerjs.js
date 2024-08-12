@@ -55,16 +55,16 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
-                alert('Registration successful!');
-                window.location.href = `index.html`;
+            if (data.statusCodeValue == 200) {
+                alert('Kayıt BAŞARILI!!!');
+                window.location.href = `/src/main/resources/static/LoginPage/index.html`;
             } else {
-                alert('Registration failed: ' + data.message);
+                alert('KAYIT BAŞARISIZ: ' + data.message);
             }
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert('An error occurred. Please try again.');
+            alert('Bir hata oluştu. Lütfen tekrar deneyiniz.');
         });
     });
 });
